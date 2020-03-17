@@ -5,7 +5,7 @@ var path = require("path");
 const Routes = require("./routes/routes.js")
 app.use(express.static(path.join(__dirname, './views')));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(Routes);
+
 
 
 
@@ -28,5 +28,7 @@ app.get("https://comp-4711-lab6.herokuapp.com/", (req, res) => {
     // res.sendFile(path.join(__dirname, '../views', 'login.html'))
     res.render('login', {layout:'login-layout'});
 })
+
+app.use(Routes);
 
 
