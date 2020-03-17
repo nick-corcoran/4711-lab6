@@ -1,0 +1,14 @@
+{{#each artist}}
+    <div class="Artist">
+        <img src=" {{this.Image}}">
+        <div>
+            <h3>{{this.Name}}</h3>
+            <p>{{this.About}}</p>
+        </div>
+        <form action="https://comp-4711-lab6.herokuapp.com/delete" method="GET">
+            <button id="{{@index}}" type = "submit" class="delete">Delete</button>
+            <input type="hidden" name="ID" value="{{this.ID}}">
+        </form>
+
+        </div>
+{{/each}}
