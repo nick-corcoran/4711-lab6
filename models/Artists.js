@@ -47,7 +47,7 @@ async function deleteArtist(ArtistId) {
 
 async function search(Phrase) {
     console.log("index: "+Phrase)
-    var data = await DB.execute("SELECT * FROM Artists where Name like ?",['%'+Phrase+'%'])
+    var data = await DB.execute("SELECT * FROM Artists where Name like ? ORDER BY Name",['%'+Phrase+'%'])
     console.log(data)
     return data[0];
 }
